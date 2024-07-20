@@ -8,7 +8,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes
 router.get("/", homeController.getIndex);
 router.get("/profile", ensureAuth, recipesController.getProfile);
-//router.get("/feed", ensureAuth, postsController.getFeed);
+router.get("/feed", ensureAuth, recipesController.getFeed);
 
 //Enables user to see their own favorited recipes
 router.get("/favorites", ensureAuth, recipesController.getFavorites);

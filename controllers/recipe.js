@@ -28,14 +28,14 @@ module.exports = {
       console.log(err);
     }
   },
-  // getFeed: async (req, res) => {
-  //   try {
-  //     const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-  //     res.render("feed.ejs", { posts: posts });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
+  getFeed: async (req, res) => {
+    try {
+      const recipes = await Recipe.find().sort({ createdAt: "desc" }).lean();
+      res.render("feed.ejs", { recipes: recipes });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getRecipe: async (req, res) => {
     try {
       //id parameter comes from the post routes
